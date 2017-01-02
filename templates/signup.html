@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+    <title>Taskash|Sign up</title>
+
+    {% if userNameExists %}
+        <p class="center">
+            Username already exists
+        </p>
+    {% endif %}
+
+    <form method="post" action="{{ url_for('main.signup_route') }}" id="signup_form">
+      <input type="text" name="username" placeholder="Username" required="required" class="input-txt" />
+        <input type="password" name="password" placeholder="Password" required="required" class="input-txt" />
+        <div class="login-footer">
+           <a href="#" class="lnk">
+            <span class="icon icon--min">(๑>◡<๑)</span>
+            Today is a pretty day
+          </a>
+
+          </div>
+    </form>
+    <button type = "submit" class="btn btn--right" form="signup_form">Sign up</button>
+
+{% endblock %}

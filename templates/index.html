@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if 'username' in session %}
+        <p class="center">
+            Logged in as {{ session['username'] }}
+        </p>
+    {% endif %}
+    <p class="center">
+      Welcome!
+    </p>
+
+    <a href={{ url_for('main.login_route') }}>Login</a>
+{% endblock %}

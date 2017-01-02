@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+    <title>Taskash|Log in</title>
+    {% if userNameNotExist %}
+        <p class="center">
+            Username does not exist
+        </p>
+    {% endif %}
+
+    {% if passwordWrong %}
+        <p class="center">
+            Password is wrong
+        </p>
+    {% endif %}
+
+    <a href='{{ url_for('main.signup_route') }}'>Sign up</a>
+
+    <body>
+      <div class="container">
+      <div class="login">
+      	<h1 class="login-heading">
+          <strong>Welcome To Taskash. Ready to hire or work? Please sign in.</strong> </h1>
+          <form method="post" action="{{ url_for('main.login_route') }}" id="login_form">
+            <input type="text" name="username" placeholder="Username" required="required" class="input-txt" />
+              <input type="password" name="password" placeholder="Password" required="required" class="input-txt" />
+              <div class="login-footer">
+                 <a href="#" class="lnk">
+                  <span class="icon icon--min">(๑>◡<๑)</span>
+                  Today is a pretty day
+                </a>
+
+                </div>
+          </form>
+          <button type = "submit" class="btn btn--right" form="login_form">Sign in</button>
+      </div>
+    </div>
+    </body>
+
+
+{% endblock %}
